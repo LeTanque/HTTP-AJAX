@@ -307,3 +307,6 @@ body {
   font-size: 1.2rem;
   width: 100%;
 }
+.friends-container .friend-card .friend-data a {
+  color: #3d92e0;
+}
