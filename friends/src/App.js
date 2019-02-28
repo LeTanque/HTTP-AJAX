@@ -37,14 +37,15 @@ class App extends Component {
       .post('http://localhost:5000/friends', friend)
       .then(response => {
         this.setState({
-          items: response.data
+          friends: response.data
         })
       })
       .catch(error => console.log(error))
   }
 
   render() {
-    // console.log(this.state.friends)
+    console.log(this.state.friends)
+
     return (
       <div className="App">
 

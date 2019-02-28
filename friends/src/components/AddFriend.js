@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 
 
-// const FriendForm = props => {
+
 class FriendForm extends React.Component {
     constructor(props) {
         super(props);
