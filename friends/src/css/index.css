@@ -183,7 +183,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: initial;
+  color: inherit;
 }
 a:hover {
   color: initial;
@@ -375,6 +375,14 @@ button:active::after {
 .cblack {
   color: #000000;
 }
+a {
+  color: #38c46d;
+  text-decoration: none;
+}
+a:hover {
+  color: #1c6237;
+  transition-duration: 0.5s;
+}
 .font-title {
   font-family: 'Roboto', sans-serif;
 }
@@ -391,6 +399,14 @@ button:active::after {
   background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
+.btn-green {
+  background-color: #38c46d;
+  color: #ffffff;
+}
+.btn-green:hover {
+  background-color: #1c6237;
+  transition-duration: 0.5s;
+}
 body {
   margin: 0;
   padding: 0;
@@ -403,15 +419,33 @@ body {
   text-align: center;
 }
 header {
-  color: #aaaaaa;
   background-color: #232323;
+  display: flex;
+  width: 100%;
 }
 header h1 {
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: left;
-  padding: 5px 10px;
+  padding: 5px 0;
+  margin-left: 10px;
+}
+header h1 a {
+  color: #aaaaaa;
+}
+header h1 a:hover {
+  color: #555555;
+}
+header nav {
+  align-self: center;
+  font-size: 2.8rem;
+  width: 100%;
+  text-align: right;
+  margin-right: 10px;
+}
+header nav a {
+  padding: 0 0 0 10px;
 }
 .friend-list {
   color: #ffffff;
@@ -436,4 +470,14 @@ header h1 {
 }
 .friend-list .friend-card .friend-data a {
   color: #3d92e0;
+}
+form {
+  background-color: unset;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 20px;
+}
+form input {
+  font-size: 1.6rem;
+  width: 100%;
 }

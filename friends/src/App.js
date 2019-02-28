@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './css/index.css';
 
 import Friends from './components/Friends';
 // import FriendsContainer from './components/FriendsContainer';
-import FriendForm from './components/FriendForm';
+import AddFriend from './components/AddFriend';
 import Header from './components/Header';
 
 
@@ -13,7 +13,9 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      friends:[]
+      friends:[],
+      friend:[],
+      error:''
     }
   }
 
@@ -23,7 +25,22 @@ class App extends Component {
       .then(response => {
         this.setState({ friends: response.data })
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+        this.setState({error:error});
+      });
+  }
+
+  addFriend = (event, friend) => {
+    event.preventDefault();
+    axios
+      .post('http://localhost:5000/friends', friend)
+      .then(response => {
+        this.setState({
+          items: response.data
+        })
+      })
+      .catch(error => console.log(error))
   }
 
   render() {
@@ -34,8 +51,8 @@ class App extends Component {
         <Header />
         
 
-        <NavLink to='/add-friend'>Add Friend</NavLink>
-        <NavLink to='/friends'>See All Friends</NavLink>
+        {/* <NavLink to='/add-friend'>Add Friend</NavLink>
+        <NavLink to='/friends'>See All Friends</NavLink> */}
 
 
         {/* <FriendsContainer friends={this.state.friends} /> */}
@@ -43,13 +60,20 @@ class App extends Component {
         <Route 
           path='/add-friend'
           render={props => (
-            <FriendForm {...props} friends={this.state.friends} />
+            <AddFriend 
+              {...props} 
+              friends={this.state.friends} 
+              addFriend={this.addFriend}
+            />
           )}
         />
         <Route
           path='/friends'
           render={props => (
-            <Friends {...props} friends={this.state.friends} />
+            <Friends 
+              {...props} 
+              friends={this.state.friends}
+            />
           )}
         />
 

@@ -15,6 +15,8 @@
 @button-bg-color: @red;
 @border-real: @dark;
 
+@links: @green;
+
 .bg-gradient(@bg-gradient-a; @bg-a-opacity; @bg-gradient-b; @bg-b-opacity) {
   background: linear-gradient( rgba(@bg-gradient-a, @bg-a-opacity), rgba(@bg-gradient-b, @bg-b-opacity));
 };
@@ -27,9 +29,10 @@
 @gray: #999999;
 @dark: #232323;
 @black: #000000;
-@primary: rgb(61, 146, 224);
 @red: #dd1111;
 @dark-red: #a00000;
+@primary: rgb(61, 146, 224);
+@green: #38c46d;
 
 // CSS Color definitions
 .cltgray { color: @light-gray; }
@@ -127,6 +130,15 @@
   }
 }
 
+a { 
+  color: @links;
+  text-decoration: none;
+  &:hover {
+    color: @links/2;
+    transition-duration: 0.5s;
+  }
+}
+
 // Positioning
 .sticky-top(@top-pos) {
   position: sticky;
@@ -160,3 +172,11 @@
 // Buttons
 .btn-gray { background-color: @gray; color: @dark; }
 .btn-clear { background-color: @clear-color; color: @white; }
+.btn-green { 
+  background-color: @green; 
+  color: @white; 
+  &:hover {
+    background-color: @green/2;
+    transition-duration: 0.5s;
+  }
+}
