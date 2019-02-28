@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 
 const Friend = props => {
-    console.log(props);
+    // console.log(props);
     
     return (
         <Fragment>

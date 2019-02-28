@@ -1,5 +1,147 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 * {
   box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #232323;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
 }
 h1,
 .h1 {
@@ -237,8 +379,9 @@ button:active::after {
   font-family: 'Roboto', sans-serif;
 }
 .font-logo {
-  font-family: 'Roboto', serif;
-  font-weight: 700;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 .btn-gray {
   background-color: #999999;
@@ -259,54 +402,38 @@ body {
 .App {
   text-align: center;
 }
-.App .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 50px 0 0 0;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+  color: #aaaaaa;
+  background-color: #232323;
 }
-.App .App-header .App-logo {
-  animation: App-logo-spin infinite 5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  height: 25vmin;
-  pointer-events: none;
+header h1 {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: left;
+  padding: 5px 10px;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg) scale(0.1);
-  }
-  to {
-    transform: rotate(360deg) scale(1.15);
-  }
-}
-.App .App-header .App-link {
-  color: #61dafb;
-}
-.friends-container {
-  margin-top: -75vh;
+.friend-list {
   color: #ffffff;
 }
-.friends-container .friend-card {
+.friend-list .friend-card {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-bottom: 30px;
   max-width: 50%;
 }
-.friends-container .friend-card .friend-name {
+.friend-list .friend-card .friend-name {
   font-size: 1.8rem;
 }
-.friends-container .friend-card .friend-name .friend-age {
+.friend-list .friend-card .friend-name .friend-age {
   font-size: 1rem;
   font-style: italic;
 }
-.friends-container .friend-card .friend-data {
+.friend-list .friend-card .friend-data {
   font-size: 1.2rem;
   width: 100%;
 }
-.friends-container .friend-card .friend-data a {
+.friend-list .friend-card .friend-data a {
   color: #3d92e0;
 }

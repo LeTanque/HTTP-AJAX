@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './css/index.css';
+import { NavLink, Route } from 'react-router-dom';
 import axios from 'axios';
-import FriendsContainer from './components/FriendsContainer';
+import './css/index.css';
+
+import Friends from './components/Friends';
+// import FriendsContainer from './components/FriendsContainer';
+import FriendForm from './components/FriendForm';
+import Header from './components/Header';
+
 
 class App extends Component {
   constructor(){
@@ -25,10 +30,29 @@ class App extends Component {
     // console.log(this.state.friends)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <FriendsContainer friends={this.state.friends} />
+
+        <Header />
+        
+
+        <NavLink to='/add-friend'>Add Friend</NavLink>
+        <NavLink to='/friends'>See All Friends</NavLink>
+
+
+        {/* <FriendsContainer friends={this.state.friends} /> */}
+
+        <Route 
+          path='/add-friend'
+          render={props => (
+            <FriendForm {...props} friends={this.state.friends} />
+          )}
+        />
+        <Route
+          path='/friends'
+          render={props => (
+            <Friends {...props} friends={this.state.friends} />
+          )}
+        />
+
       </div>
     );
   }
