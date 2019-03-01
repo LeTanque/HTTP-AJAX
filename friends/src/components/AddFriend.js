@@ -44,10 +44,12 @@ class FriendForm extends React.Component {
     }
 
     handleSubmit = event => {
-        if (this.props.friend) {
-            this.props.updateFriend(event, this.state.friend)
+        if (this.props.friend.length === 0) {
+            console.log('new friend, change handler got this')
+            // this.props.addFriend(event, this.state.friend)
         } else {
-            this.props.addFriend(event, this.state.friend)
+            console.log('this is an update, firing updateFriend')
+            this.props.updateFriend(event, this.state.friend)
         }
         console.log('handlesubmit fired');
         
@@ -73,8 +75,8 @@ class FriendForm extends React.Component {
     }
 
     render() {
-        console.log('This is the state', this.state.friend);
-        console.log('These are the props', this.props);
+        // console.log('This is the state', this.state.friend);
+        // console.log('These are the props', this.props);
 
         return (
             <Fragment>
