@@ -407,6 +407,14 @@ a:hover {
   background-color: #1c6237;
   transition-duration: 0.5s;
 }
+.btn-red {
+  background-color: #a00000;
+  color: #ffffff;
+}
+.btn-red:hover {
+  background-color: #500000;
+  transition-duration: 0.5s;
+}
 body {
   margin: 0;
   padding: 0;
@@ -450,13 +458,17 @@ header nav a {
 .friend-list {
   margin-top: 20px;
   color: #ffffff;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 5%;
+  padding: 0 20px;
 }
 .friend-list .friend-card {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-bottom: 30px;
-  max-width: 50%;
+  width: 100%;
   background-color: #353535;
   border-bottom: 1px solid #000000;
   padding: 10px 0;
@@ -466,8 +478,9 @@ header nav a {
   font-size: 1.8rem;
 }
 .friend-list .friend-card .friend-name .friend-age {
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-style: italic;
+  color: #808080;
 }
 .friend-list .friend-card .friend-data {
   font-size: 1.2rem;
@@ -477,12 +490,16 @@ header nav a {
   color: #3d92e0;
 }
 .friend-list .friend-card .friend-buttons {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #38c46d;
   margin: 10px 10px 0 0;
 }
 .friend-list .friend-card .friend-buttons svg {
   margin: 0 10px;
+}
+.friend-profile {
+  color: #ffffff;
+  font-size: 3.5rem;
 }
 form {
   background-color: unset;
@@ -493,4 +510,7 @@ form {
 form input {
   font-size: 1.6rem;
   width: 100%;
+}
+button {
+  margin: 0 10px;
 }

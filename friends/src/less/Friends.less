@@ -1,12 +1,17 @@
 .friend-list {
     margin-top: 20px;
     color: @white;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+    padding: 0 20px;
+
     .friend-card {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         margin-bottom: 30px;
-        max-width: 50%;
+        width: 100%;
         background-color: @dark*1.5;
         border-bottom: 1px solid @black;
         padding: 10px 0;
@@ -14,8 +19,9 @@
         .friend-name {
             font-size: 1.8rem;
             .friend-age {
-                font-size: 1rem;
+                font-size: 1.4rem;
                 font-style: italic;
+                color: @white/2;
             }
         }
         .friend-data {
@@ -26,12 +32,16 @@
             }
         }
         .friend-buttons {
-            font-size: 2rem;
+            font-size: 2.4rem;
             color: @green;
             margin: 10px 10px 0 0;
             svg {
                 margin: 0 10px;
             }
         }
-    }
+    }   
+}
+.friend-profile {
+    color: @white;
+    font-size:3.5rem;
 }

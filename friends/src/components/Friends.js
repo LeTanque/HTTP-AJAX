@@ -3,6 +3,9 @@ import Friend from './Friend';
 
 
 const Friends = props => {
+    if (!props.friends.length === 0) {
+        return <h3>Loading friends...</h3>;
+    }
 
     return (
         <Fragment>
@@ -12,8 +15,9 @@ const Friends = props => {
                     <Friend 
                         key={friend.id} 
                         friend={friend} 
+                        friends={props.friends}
                         deleteFriend={props.deleteFriend}
-                        setUpdateFriend={props.setUpdateFriend}
+                        setActiveFriend={props.setActiveFriend}
                     />
                 ))}
             </section>

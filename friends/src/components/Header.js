@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Fragment>
             <header className="">
-                <h1><Link to="/">Friends</Link></h1>
+                <h1><Link to="/">Friend<span className='cblack'>collect</span></Link></h1>
                 <nav>
                     <NavLink to='/add-friend' > <FaUserPlus /> </NavLink>
                     <NavLink to='/friends'> <FaUserFriends /> </NavLink>

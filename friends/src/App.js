@@ -4,7 +4,8 @@ import axios from 'axios';
 import './css/index.css';
 
 import Friends from './components/Friends';
-// import FriendsContainer from './components/FriendsContainer';
+// import Friend from './components/Friend';
+import FriendProfile from './components/FriendProfile';
 import AddFriend from './components/AddFriend';
 import Header from './components/Header';
 
@@ -39,7 +40,7 @@ class App extends Component {
         this.setState({
           friends: response.data
         })
-        // this.props.history.push('/add-friend');
+        this.props.history.push('/friends');
       })
       .catch(error => console.log(error))
   }
@@ -52,20 +53,21 @@ class App extends Component {
         this.setState({
           friends: response.data
         });
-        // this.props.history.push('/friends');
+        this.props.history.push('/friends');
       })
       .catch(error => {
         console.log(error);
       });
   };
 
-  setUpdateFriend = (event, friend) => {
+
+  setActiveFriend = (event, friendFromState, destination) => {
     event.preventDefault();
     this.setState({
-      friend: friend
+      friend: friendFromState
     });
-    console.log('set update friend clicked');
-    // this.props.history.push('/add-friend');
+    console.log('set active friend clicked');
+    this.props.history.push(destination);
   };
 
   updateFriend = (event, friend) => {
@@ -76,10 +78,10 @@ class App extends Component {
         this.setState({
           friends: response.data
         });
-        // this.props.history.push('/friends');
+        this.props.history.push('/friends');
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.log(error);
       });
   };
 
@@ -91,24 +93,8 @@ class App extends Component {
       <div className="App">
 
         <Header />
-        
 
-        {/* <NavLink to='/add-friend'>Add Friend</NavLink>
-        <NavLink to='/friends'>See All Friends</NavLink> */}
-
-
-        {/* <FriendsContainer friends={this.state.friends} /> */}
-
-        <Route 
-          path='/add-friend'
-          render={props => (
-            <AddFriend 
-              {...props} 
-              friends={this.state.friends} 
-              addFriend={this.addFriend}
-            />
-          )}
-        />
+        {/* Route to the friends list */}
         <Route
           path='/friends'
           render={props => (
@@ -116,10 +102,39 @@ class App extends Component {
               {...props} 
               friends={this.state.friends}
               deleteFriend={this.deleteFriend}
-              setUpdateFriend={this.setUpdateFriend}
+              setActiveFriend={this.setActiveFriend}
             />
           )}
         />
+        
+        {/* Route to the add friend form */}
+        <Route 
+          path='/add-friend'
+          render={props => (
+            <AddFriend 
+              {...props} 
+              friends={this.state.friends}
+              friend={this.state.friend}
+              addFriend={this.addFriend}
+              updateFriend={this.updateFriend}
+            />
+          )}
+        />
+        
+        {/* Route to each individual friend */}
+        <Route
+          exact
+          path="/friends/profile/:id"
+          render={props => (
+              <FriendProfile
+              {...props}
+              friend={this.state.friend}
+              // deleteFriend={props.deleteFriend}
+              // setActiveFriend={props.setActiveFriend}
+              />
+        )}
+        />
+
 
       </div>
     );
