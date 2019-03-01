@@ -9,7 +9,11 @@ const Friends = props => {
 
             <section className='friend-list'>
                 {props.friends.map(friend => (
-                    <Friend key={friend.id} friend={friend} />
+                    <Friend 
+                        key={friend.id} 
+                        friend={friend} 
+                        deleteFriend={props.deleteFriend}
+                    />
                 ))}
             </section>
             

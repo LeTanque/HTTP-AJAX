@@ -39,12 +39,29 @@ class App extends Component {
         this.setState({
           friends: response.data
         })
+        // this.props.history.push('/add-friend');
       })
       .catch(error => console.log(error))
   }
 
+  deleteFriend = (event, id) => {
+    event.preventDefault();
+    axios
+      .delete(`http://localhost:5000/friends/${id}`)
+      .then(response => {
+        this.setState({
+          friends: response.data
+        });
+        // this.props.history.push('/friends');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+
   render() {
-    console.log(this.state.friends)
+    // console.log(this.state.friends)
 
     return (
       <div className="App">
@@ -74,6 +91,7 @@ class App extends Component {
             <Friends 
               {...props} 
               friends={this.state.friends}
+              deleteFriend={this.deleteFriend}
             />
           )}
         />

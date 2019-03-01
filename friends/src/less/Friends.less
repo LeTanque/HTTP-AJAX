@@ -1,5 +1,5 @@
 .friend-list {
-    // margin-top: -75vh;
+    margin-top: 20px;
     color: @white;
     .friend-card {
         display: flex;
@@ -7,6 +7,10 @@
         margin: 0 auto;
         margin-bottom: 30px;
         max-width: 50%;
+        background-color: @dark*1.5;
+        border-bottom: 1px solid @black;
+        padding: 10px 0;
+        .box-shadow(0;2px;3px;1px;@dark);
         .friend-name {
             font-size: 1.8rem;
             .friend-age {
@@ -19,6 +23,14 @@
             width: 100%;
             a {
                 color: @primary;
+            }
+        }
+        .friend-buttons {
+            font-size: 2rem;
+            color: @green;
+            margin: 10px 10px 0 0;
+            svg {
+                margin: 0 10px;
             }
         }
     }

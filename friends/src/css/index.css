@@ -448,6 +448,7 @@ header nav a {
   padding: 0 0 0 10px;
 }
 .friend-list {
+  margin-top: 20px;
   color: #ffffff;
 }
 .friend-list .friend-card {
@@ -456,6 +457,10 @@ header nav a {
   margin: 0 auto;
   margin-bottom: 30px;
   max-width: 50%;
+  background-color: #353535;
+  border-bottom: 1px solid #000000;
+  padding: 10px 0;
+  box-shadow: 0 2px 3px 1px #232323;
 }
 .friend-list .friend-card .friend-name {
   font-size: 1.8rem;
@@ -470,6 +475,14 @@ header nav a {
 }
 .friend-list .friend-card .friend-data a {
   color: #3d92e0;
+}
+.friend-list .friend-card .friend-buttons {
+  font-size: 2rem;
+  color: #38c46d;
+  margin: 10px 10px 0 0;
+}
+.friend-list .friend-card .friend-buttons svg {
+  margin: 0 10px;
 }
 form {
   background-color: unset;
