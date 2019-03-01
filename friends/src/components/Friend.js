@@ -13,7 +13,7 @@ class Friend extends React.Component {
             return <h3>Loading friends...</h3>;
         }
         // console.log(props);
-        console.log(props.friend);
+        // console.log(props.friend);
         // const { matched } = props.match.params;
         // const friend = props.friends.find(thing => `${thing.id}` === matched);
 
