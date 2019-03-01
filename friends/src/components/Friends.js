@@ -13,6 +13,7 @@ const Friends = props => {
                         key={friend.id} 
                         friend={friend} 
                         deleteFriend={props.deleteFriend}
+                        setUpdateFriend={props.setUpdateFriend}
                     />
                 ))}
             </section>

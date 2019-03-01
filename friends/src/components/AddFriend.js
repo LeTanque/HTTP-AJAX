@@ -6,7 +6,7 @@ class FriendForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            friend: {
+            friend: this.props.activeItem || {
                 name:'',
                 age:'',
                 email:''

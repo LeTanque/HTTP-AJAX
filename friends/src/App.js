@@ -59,6 +59,30 @@ class App extends Component {
       });
   };
 
+  setUpdateFriend = (event, friend) => {
+    event.preventDefault();
+    this.setState({
+      friend: friend
+    });
+    console.log('set update friend clicked');
+    // this.props.history.push('/add-friend');
+  };
+
+  updateFriend = (event, friend) => {
+    event.preventDefault();
+    axios
+      .put(`http://localhost:5000/friends/${friend.id}`, friend)
+      .then(response => {
+        this.setState({
+          friends: response.data
+        });
+        // this.props.history.push('/friends');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
 
   render() {
     // console.log(this.state.friends)
@@ -92,6 +116,7 @@ class App extends Component {
               {...props} 
               friends={this.state.friends}
               deleteFriend={this.deleteFriend}
+              setUpdateFriend={this.setUpdateFriend}
             />
           )}
         />

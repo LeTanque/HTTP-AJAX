@@ -15,10 +15,10 @@ const Friend = props => {
 
                 <span className='friend-buttons'>
                     <FaUserMinus 
-                        onClick={e => props.deleteFriend(e, props.friend.id)} 
+                        onClick={event => props.deleteFriend(event, props.friend.id)} 
                     />
                     <FaUserEdit 
-                        // onClick={e => updateFriend(e, props.friend)} 
+                        onClick={event => props.setUpdateFriend(event, props.friend)} 
                     />
                 </span>
 
